@@ -37,6 +37,15 @@ while(true) {
         $pass = str_replace('"', '', $pass);
 
         echo "Username: admin\nPassword: {$pass}\n";
+      } elseif($line == 'killswitch') {
+        echo "WARNING: THIS WILL KILL THE WEBSERVER. You'll lose access and the web server will be shut down. If you're sure you want to do this, run `killswitch --confirm`.\n";
+      } elseif($line == 'killswitch --confirm') {
+        // Kill lighttpd and exit.
+        echo "Web server is shutting down...\n";
+        echo request('killall -15 lighttpd', 0, 0);
+
+        echo "GONE.\n";
+        break;
       } else {
         echo request($line)."\n";
       }
@@ -47,7 +56,7 @@ while(true) {
   }
 }
 
-function request($string, $initial_check=0) {
+function request($string, $initial_check=0, $warn=1) {
   // Forgive me. Forgive me.
   global $options;
 
@@ -67,8 +76,8 @@ function request($string, $initial_check=0) {
     return array('body' => $final, 'status' => $headers[0]);
   }
 
-  if($final == "") {
-    return "warn: no output. run `tail /tmp/lighttpd.error.log -n 1` to see latest error.";
+  if($final == "" && $warn == 1) {
+    return "No output. This may be a response as a result of the command executed or there may be something in STDERR. Check /tmp/lighttpd.error.log for potential errors.";
   }
   return $final;
 }
