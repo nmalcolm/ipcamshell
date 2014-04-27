@@ -59,13 +59,15 @@ Username: admin
 Password: hunter2
 ```
 
-`quit`, `exit`, and `^C` also work to kill the process.
+If you wish to kill the web server (to prevent someone from accessing the web interface temporarily), run the `killswitch` command. Note that the camera will continue to record regardless of this. Shutting the server down *might* switch the camera off, although that's complete speculation.
 
 If the camera isn't vulnerable, the server isn't up, or the internet hates you, you'll recieve the following message:
 
 ```
 Sorry, the server specified isn't vulnerable.
 ```
+
+`quit`, `exit`, and `^C` also work to kill the process.
 
 Note
 =======
