@@ -77,7 +77,7 @@ Sorry, the server specified isn't vulnerable.
 ```
 
 Automation
-=======
+-------
 
 IPCS has the potential to be automated in different ways. This, I'm going to leave to you. The `-c` option won't drop you in to a shell after successfully exploiting a server, and the `-g` option surpresses the "Sorry, the server specified isn't vulnerable." messages for failed attempts.
 
