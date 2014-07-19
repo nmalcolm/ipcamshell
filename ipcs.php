@@ -45,6 +45,8 @@ while(true) {
         $pass =  request('echo AdminPasswd_ss|tdb get HTTPAccount');
         $pass = str_replace('AdminPasswd_ss=', '', $pass);
         $pass = str_replace('"', '', $pass);
+        // There are likely to be more characters which are escaped. Found one? Send a pull request.
+        $pass = str_replace('\$', '$', $pass);
 
         echo "Username: admin\nPassword: {$pass}\n";
       } elseif($line == 'killswitch') {
