@@ -68,7 +68,7 @@ Username: admin
 Password: hunter2
 ```
 
-If you wish to kill the web server (to prevent someone from accessing the web interface temporarily), run the `killswitch` command. Note that the camera will continue to record regardless of this. Shutting the server down *might* switch the camera off, although that's complete speculation.
+If you wish to kill the web server (to prevent someone from accessing the web interface temporarily), run the `killswitch` command. Note that the camera will continue to record regardless of this.
 
 
 
