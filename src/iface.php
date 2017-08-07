@@ -48,6 +48,20 @@ const    ITAL   =    "\x1B[3m";
 class Iface 
 {
     /**
+     * net Object of Net_IPv4; 
+     * 
+     * @var mixed
+     * @access public
+     */
+    public $net;
+    /**
+     * options 
+     * 
+     * @var array
+     * @access public
+     */
+    public $options = array();
+    /**
      * __construct 
      * 
      * @access public
@@ -55,7 +69,7 @@ class Iface
      */
     public function __construct()
     {
-        // it will be static method's class
+        $this->net = new Net_IPv4; 
     }
 
     /**
@@ -77,69 +91,6 @@ class Iface
     }
 
     /**
-     * mainMenu 
-     * 
-     * @static
-     * @access public
-     * @return void
-     */
-    public static function mainMenu()
-    {
-        $art = <<<ART
-@@@ @@@@@@@   @@@@@@@  @@@@@@
-   @@! @@!  @@@ !@@      !@@     
- !!@ @!@@!@!  !@!       !@@!!  
- !!: !!:      :!!          !:! 
- ::: :::       :: :: : ::.: :  
-  ###    framework    ###   
-ART;
-//        $art = print(Iface::banner());
-        $itemCallable = function (CliMenu $menu) {
-                echo $menu->getSelectedItem()->getText();
-        };
-
-        $get_ip = function (CliMenu $menu) {
-                $range = self::getIP();
-                print($range);
-                return $range;
-        };
-
-         $menu = (new CliMenuBuilder)
-            ->addAsciiArt($art)
-            ->setTitle('IPCamShell_Framework')
-            ->addLineBreak()
-            ->addStaticItem('Prepare and scan')
-            ->addStaticItem('---------')
-            ->addItem('Set IP diapason', $get_ip)
-            ->addItem('Scan IP diapason for vuln cams', $itemCallable)
-            ->addItem('Third Item', $itemCallable)
-            ->addLineBreak()
-            ->addStaticItem('Section 2')
-            ->addStaticItem('---------')
-            ->addItem('Fourth Item', $itemCallable)
-            ->addItem('Fifth Item', $itemCallable)
-            ->addItem('Sixth Item', $itemCallable)
-            ->addLineBreak()
-            ->addStaticItem('Section 3')
-            ->addStaticItem('---------')
-            ->addItem('Seventh Item', $itemCallable)
-            ->addItem('Eighth Item', $itemCallable)
-            ->addItem('Ninth Item', $itemCallable)
-            ->addLineBreak()
-            ->setWidth(70)
-            ->setBackgroundColour('black')
-            ->setForegroundColour('red')
-            ->setPadding(4)
-            ->setMargin(4)
-            ->setUnselectedMarker(' ')
-            ->setSelectedMarker('>')
-            ->setTitleSeparator('- ')
-            ->build();
-
-        $menu->open();
-    }
-
-    /**
      * getIP Gets ip range from user input.
      * 
      * @static
@@ -151,11 +102,47 @@ ART;
         $ip_range = null;
         print(BOLD.RED."Enter ip range\n".RESET);
         fscanf(STDIN, "%s\n", $ip_range);
-
+        
+        for ($i = 0; $i < strlen($ip_range); $i++) {
+            if (!ctype_digit($ip_range[$i]) && ($ip_range[$i] !== trim('.')) && ($ip_range[$i] !== trim('/'))) {
+                    die("There was no ip\n");
+            }
+        }
+          
         return $ip_range;
     }
 
+    /**
+     * Validate the syntax of the given IP adress
+     *
+     * Using the PHP long2ip() and ip2long() functions, convert the IP
+     * address from a string to a long and back.  If the original still
+     * matches the converted IP address, it's a valid address.  This
+     * function does not allow for IP addresses to be formatted as long
+     * integers.
+     *
+     * @param  string $ip IP address in the format x.x.x.x
+     * @return bool       true if syntax is valid, otherwise false
+     */
+
+    public static function validateIP($ip)
+
+    {
+        if ($ip == long2ip(ip2long($ip))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }
 
-//Iface::banner();
-Iface::mainMenu();
+$iface = new Iface();
+var_dump($iface->options);
+
+Iface::banner();
+$ip = Iface::getIP();
+var_dump($ip);
+$ip = Iface::validateIP(:wq$ip);
+var_dump($ip);

@@ -3,9 +3,8 @@
     "description": "pentest framework for find and exploit IP-cams vulnerability",
     "type": "project",
     "require": {
-        "php-school/cli-menu": "^2.0",
         "pear2/console_commandline": "dev-master",
-        "pear/net_ipv4": "dev-trunk"
+        "leth/ip-address": "dev-master"
     },
     "authors": [
         {

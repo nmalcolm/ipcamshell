@@ -4,110 +4,86 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "77f62353102192c13334a65399cecfe8",
+    "content-hash": "b72eedf75aff46fed0898d25efbea795",
     "packages": [
         {
-            "name": "beberlei/assert",
-            "version": "v2.7.6",
+            "name": "leth/ip-address",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/beberlei/assert.git",
-                "reference": "8726e183ebbb0169cb6cb4832e22ebd355524563"
+                "url": "https://github.com/leth/PHP-IPAddress.git",
+                "reference": "c62aab4c1a3a4d32c154b42965e62b23aa46b05b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beberlei/assert/zipball/8726e183ebbb0169cb6cb4832e22ebd355524563",
-                "reference": "8726e183ebbb0169cb6cb4832e22ebd355524563",
+                "url": "https://api.github.com/repos/leth/PHP-IPAddress/zipball/c62aab4c1a3a4d32c154b42965e62b23aa46b05b",
+                "reference": "c62aab4c1a3a4d32c154b42965e62b23aa46b05b",
                 "shasum": ""
             },
             "require": {
-                "ext-mbstring": "*",
-                "php": ">=5.3"
-            },
-            "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.1.1",
-                "phpunit/phpunit": "^4|^5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Assert\\": "lib/Assert"
-                },
-                "files": [
-                    "lib/Assert/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de",
-                    "role": "Lead Developer"
-                },
-                {
-                    "name": "Richard Quadling",
-                    "email": "rquadling@gmail.com",
-                    "role": "Collaborator"
-                }
-            ],
-            "description": "Thin assertion library for input validation in business models.",
-            "keywords": [
-                "assert",
-                "assertion",
-                "validation"
-            ],
-            "time": "2017-05-04T02:00:24+00:00"
-        },
-        {
-            "name": "pear/net_ipv4",
-            "version": "dev-trunk",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/pear/Net_IPv4.git",
-                "reference": "6c9bf44068e1f6b5dd3afe7455e8cd70102b675a"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/pear/Net_IPv4/zipball/6c9bf44068e1f6b5dd3afe7455e8cd70102b675a",
-                "reference": "6c9bf44068e1f6b5dd3afe7455e8cd70102b675a",
-                "shasum": ""
-            },
-            "require": {
-                "pear/pear_exception": "*"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "*"
+                "pear/math_biginteger": "1.0.3"
             },
             "type": "library",
             "autoload": {
                 "psr-0": {
-                    "Net": "./"
+                    "Leth\\IPAddress": "classes/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "include-path": [
-                "./"
-            ],
             "license": [
-                "PHP License 3.01"
+                "LGPL-3.0"
+            ],
+            "description": "IPv4 and IPv6 address and subnet classes with awesome utility functions.",
+            "time": "2017-02-23 22:36:10"
+        },
+        {
+            "name": "pear/math_biginteger",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Math_BigInteger.git",
+                "reference": "33d4357543037a458fad3e8c837a01b93104e592"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Math_BigInteger/zipball/33d4357543037a458fad3e8c837a01b93104e592",
+                "reference": "33d4357543037a458fad3e8c837a01b93104e592",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=4.2.0"
+            },
+            "suggest": {
+                "ext-bcmath": "Allows using the BCMath extension internally for computation. Faster than native implementation.",
+                "ext-gmp": "Allows using the GNU Multiple Precision extension internally for computation. If you are doing a lot of computation this is the recommended extension."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Math_": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
             ],
             "authors": [
                 {
-                    "name": "Marco Kaiser",
-                    "email": "bate@php.net",
-                    "role": "Lead"
-                },
-                {
-                    "name": "Florian Anderiasch",
-                    "email": "fa@php.net",
-                    "role": "Developer"
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net"
                 }
             ],
-            "description": "More info available on: http://pear.php.net/package/Net_IPv4",
-            "time": "2014-03-23 13:58:24"
+            "description": "Pure-PHP arbitrary precission integer arithmetic library. If GMP or BCMath are available they are used.",
+            "homepage": "https://github.com/pear/Math_BigInteger",
+            "keywords": [
+                "arbitrary",
+                "bcmath",
+                "gmp",
+                "integer",
+                "precision"
+            ],
+            "time": "2016-04-12T05:46:52+00:00"
         },
         {
             "name": "pear/pear_exception",
@@ -222,60 +198,6 @@
                 "pear2"
             ],
             "time": "2017-05-22 13:01:54"
-        },
-        {
-            "name": "php-school/cli-menu",
-            "version": "2.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/php-school/cli-menu.git",
-                "reference": "f08d25e2818d9e2e60286cef4a11b45fd8c72de3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/php-school/cli-menu/zipball/f08d25e2818d9e2e60286cef4a11b45fd8c72de3",
-                "reference": "f08d25e2818d9e2e60286cef4a11b45fd8c72de3",
-                "shasum": ""
-            },
-            "require": {
-                "beberlei/assert": "^2.4",
-                "ext-posix": "*",
-                "php": ">=5.6"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~5.0",
-                "squizlabs/php_codesniffer": "~2.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PhpSchool\\CliMenu\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Michael Woodward",
-                    "email": "mikeymike.mw@gmail.com"
-                },
-                {
-                    "name": "Aydin Hassan",
-                    "email": "aydin@hotmail.com"
-                }
-            ],
-            "description": "A command line menu helper in PHP",
-            "keywords": [
-                "cli",
-                "console",
-                "menu",
-                "php-school",
-                "phpschool",
-                "terminal"
-            ],
-            "time": "2017-03-01T21:55:27+00:00"
         }
     ],
     "packages-dev": [],
@@ -283,7 +205,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "pear2/console_commandline": 20,
-        "pear/net_ipv4": 20
+        "leth/ip-address": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
