@@ -12,6 +12,12 @@
  * @license MIT
  */
 
+error_reporting(E_ALL);
+
+use PhpSchool\CliMenu\CliMenu;
+use PhpSchool\CliMenu\CliMenuBuilder;
+
+require_once(__DIR__ . '/../vendor/autoload.php');
 
 /* Global constants for colorize output */
 
@@ -32,19 +38,124 @@ const    MGRAY  =    "\e[92m";
 const    DEL    =    "\x1B[2D";
 const    BOLD   =    "\x1B[1m";
 const    LINE   =    "\x1B[4m";
-const    BL     =    "\e[5mBlink"; /* not supported on some terminals */
+/* not supported on some terminals */
+const    BL     =    "\e[5mBlink";
 const    HIDE   =    "\x1B[8m";
 const    INV    =    "\x1B[7m";
 const    ITAL   =    "\x1B[3m";
 
 
-class Iface
+class Iface 
 {
+    /**
+     * __construct 
+     * 
+     * @access public
+     * @return void
+     */
+    public function __construct()
+    {
+        // it will be static method's class
+    }
 
-system("clear");
-print(RED."@@@ @@@@@@@   @@@@@@@  @@@@@@\n"); 
-print("@@! @@!  @@@ !@@      !@@     \n");
-print("!!@ @!@@!@!  !@!       !@@!!  \n");
-print("!!: !!:      :!!          !:! \n");
-print(":    :        :: :: : ::.: :  \n");
-print(BOLD.BRED.LINE.WHT."  ###    framework    ###   \n".RESET);
+    /**
+     * banner 
+     * 
+     * @static
+     * @access public
+     * @return void
+     */
+    public static function banner()
+    {
+        system("clear");
+        print(RED."@@@ @@@@@@@   @@@@@@@  @@@@@@\n"); 
+        print("@@! @@!  @@@ !@@      !@@     \n");
+        print("!!@ @!@@!@!  !@!       !@@!!  \n");
+        print("!!: !!:      :!!          !:! \n");
+        print(":    :        :: :: : ::.: :  \n");
+        print(BOLD.BRED.LINE.WHT."  ###    framework    ###   \n".RESET);
+    }
+
+    /**
+     * mainMenu 
+     * 
+     * @static
+     * @access public
+     * @return void
+     */
+    public static function mainMenu()
+    {
+        $art = <<<ART
+@@@ @@@@@@@   @@@@@@@  @@@@@@
+   @@! @@!  @@@ !@@      !@@     
+ !!@ @!@@!@!  !@!       !@@!!  
+ !!: !!:      :!!          !:! 
+ ::: :::       :: :: : ::.: :  
+  ###    framework    ###   
+ART;
+//        $art = print(Iface::banner());
+        $itemCallable = function (CliMenu $menu) {
+                echo $menu->getSelectedItem()->getText();
+        };
+
+        $get_ip = function (CliMenu $menu) {
+                $range = self::getIP();
+                print($range);
+                return $range;
+        };
+
+         $menu = (new CliMenuBuilder)
+            ->addAsciiArt($art)
+            ->setTitle('IPCamShell_Framework')
+            ->addLineBreak()
+            ->addStaticItem('Prepare and scan')
+            ->addStaticItem('---------')
+            ->addItem('Set IP diapason', $get_ip)
+            ->addItem('Scan IP diapason for vuln cams', $itemCallable)
+            ->addItem('Third Item', $itemCallable)
+            ->addLineBreak()
+            ->addStaticItem('Section 2')
+            ->addStaticItem('---------')
+            ->addItem('Fourth Item', $itemCallable)
+            ->addItem('Fifth Item', $itemCallable)
+            ->addItem('Sixth Item', $itemCallable)
+            ->addLineBreak()
+            ->addStaticItem('Section 3')
+            ->addStaticItem('---------')
+            ->addItem('Seventh Item', $itemCallable)
+            ->addItem('Eighth Item', $itemCallable)
+            ->addItem('Ninth Item', $itemCallable)
+            ->addLineBreak()
+            ->setWidth(70)
+            ->setBackgroundColour('black')
+            ->setForegroundColour('red')
+            ->setPadding(4)
+            ->setMargin(4)
+            ->setUnselectedMarker(' ')
+            ->setSelectedMarker('>')
+            ->setTitleSeparator('- ')
+            ->build();
+
+        $menu->open();
+    }
+
+    /**
+     * getIP Gets ip range from user input.
+     * 
+     * @static
+     * @access public
+     * @return string $ip_range.
+     */
+    public static function getIP()
+    {
+        $ip_range = null;
+        print(BOLD.RED."Enter ip range\n".RESET);
+        fscanf(STDIN, "%s\n", $ip_range);
+
+        return $ip_range;
+    }
+
+}
+
+//Iface::banner();
+Iface::mainMenu();

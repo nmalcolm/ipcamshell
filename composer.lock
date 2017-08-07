@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "31fe45a2930458fb26fc2a1d50b88805",
+    "content-hash": "77f62353102192c13334a65399cecfe8",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -60,6 +60,109 @@
                 "validation"
             ],
             "time": "2017-05-04T02:00:24+00:00"
+        },
+        {
+            "name": "pear/net_ipv4",
+            "version": "dev-trunk",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Net_IPv4.git",
+                "reference": "6c9bf44068e1f6b5dd3afe7455e8cd70102b675a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Net_IPv4/zipball/6c9bf44068e1f6b5dd3afe7455e8cd70102b675a",
+                "reference": "6c9bf44068e1f6b5dd3afe7455e8cd70102b675a",
+                "shasum": ""
+            },
+            "require": {
+                "pear/pear_exception": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Net": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "./"
+            ],
+            "license": [
+                "PHP License 3.01"
+            ],
+            "authors": [
+                {
+                    "name": "Marco Kaiser",
+                    "email": "bate@php.net",
+                    "role": "Lead"
+                },
+                {
+                    "name": "Florian Anderiasch",
+                    "email": "fa@php.net",
+                    "role": "Developer"
+                }
+            ],
+            "description": "More info available on: http://pear.php.net/package/Net_IPv4",
+            "time": "2014-03-23 13:58:24"
+        },
+        {
+            "name": "pear/pear_exception",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/PEAR_Exception.git",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/8c18719fdae000b690e3912be401c76e406dd13b",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "class",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PEAR": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "."
+            ],
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Helgi Thormar",
+                    "email": "dufuz@php.net"
+                },
+                {
+                    "name": "Greg Beaver",
+                    "email": "cellog@php.net"
+                }
+            ],
+            "description": "The PEAR Exception base class.",
+            "homepage": "https://github.com/pear/PEAR_Exception",
+            "keywords": [
+                "exception"
+            ],
+            "time": "2015-02-10 20:07:52"
         },
         {
             "name": "pear2/console_commandline",
@@ -179,7 +282,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "pear2/console_commandline": 20
+        "pear2/console_commandline": 20,
+        "pear/net_ipv4": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
