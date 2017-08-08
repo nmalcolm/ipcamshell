@@ -4,8 +4,58 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b72eedf75aff46fed0898d25efbea795",
+    "content-hash": "f91877fd50a4b03e2a388abc8c7ec8e5",
     "packages": [
+        {
+            "name": "bankiru/ip-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bankiru/ip-tools.git",
+                "reference": "40a0d461225634de845857016ede805b0618a168"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bankiru/ip-tools/zipball/40a0d461225634de845857016ede805b0618a168",
+                "reference": "40a0d461225634de845857016ede805b0618a168",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "0.4.*",
+                "phpunit/phpunit": "4.1.*",
+                "satooshi/php-coveralls": "0.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bankiru\\IPTools\\": [
+                        "src",
+                        "tests"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Gorbylev",
+                    "email": "ekho@ekho.name"
+                }
+            ],
+            "description": "ip range, cidr, netmask functions",
+            "keywords": [
+                "IP",
+                "cidr",
+                "ip range",
+                "netmask"
+            ],
+            "time": "2014-10-31 08:36:34"
+        },
         {
             "name": "leth/ip-address",
             "version": "dev-master",
@@ -205,7 +255,8 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "pear2/console_commandline": 20,
-        "leth/ip-address": 20
+        "leth/ip-address": 20,
+        "bankiru/ip-tools": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

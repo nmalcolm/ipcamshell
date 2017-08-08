@@ -47,13 +47,7 @@ const    ITAL   =    "\x1B[3m";
 
 class Iface 
 {
-    /**
-     * net Object of Net_IPv4; 
-     * 
-     * @var mixed
-     * @access public
-     */
-    public $net;
+
     /**
      * options 
      * 
@@ -69,7 +63,7 @@ class Iface
      */
     public function __construct()
     {
-        $this->net = new Net_IPv4; 
+        // 
     }
 
     /**
@@ -89,7 +83,7 @@ class Iface
         print(":    :        :: :: : ::.: :  \n");
         print(BOLD.BRED.LINE.WHT."  ###    framework    ###   \n".RESET);
     }
-
+    
     /**
      * getIP Gets ip range from user input.
      * 
@@ -97,52 +91,19 @@ class Iface
      * @access public
      * @return string $ip_range.
      */
-    public static function getIP()
+    public static function ifaceGetIpRange()
     {
-        $ip_range = null;
-        print(BOLD.RED."Enter ip range\n".RESET);
-        fscanf(STDIN, "%s\n", $ip_range);
-        
-        for ($i = 0; $i < strlen($ip_range); $i++) {
-            if (!ctype_digit($ip_range[$i]) && ($ip_range[$i] !== trim('.')) && ($ip_range[$i] !== trim('/'))) {
-                    die("There was no ip\n");
-            }
-        }
-          
-        return $ip_range;
+        $ip = null;
+        print(BOLD.RED."Enter ip\n".RESET);
     }
-
-    /**
-     * Validate the syntax of the given IP adress
-     *
-     * Using the PHP long2ip() and ip2long() functions, convert the IP
-     * address from a string to a long and back.  If the original still
-     * matches the converted IP address, it's a valid address.  This
-     * function does not allow for IP addresses to be formatted as long
-     * integers.
-     *
-     * @param  string $ip IP address in the format x.x.x.x
-     * @return bool       true if syntax is valid, otherwise false
-     */
-
-    public static function validateIP($ip)
-
-    {
-        if ($ip == long2ip(ip2long($ip))) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
 
 }
-
+/*
 $iface = new Iface();
 var_dump($iface->options);
 
 Iface::banner();
 $ip = Iface::getIP();
 var_dump($ip);
-$ip = Iface::validateIP(:wq$ip);
-var_dump($ip);
+$ip = Iface::validateIP($ip);
+var_dump($ip);*/

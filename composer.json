@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "pear2/console_commandline": "dev-master",
-        "leth/ip-address": "dev-master"
+        "leth/ip-address": "dev-master",
+        "bankiru/ip-tools": "dev-master"
     },
     "authors": [
         {
