@@ -28,19 +28,19 @@ require_once(__DIR__ . '/iface.php');
 
 class IpHandle 
 {
+    /**
+     * __construct 
+     * 
+     * @access public
+     * @return void
+     */
     public function __construct()
     {
-//        parent::__construct();    
+   
     }
 
     /**
-     * Validate the syntax of the given IP adress
-     *
-     * Using the PHP long2ip() and ip2long() functions, convert the IP
-     * address from a string to a long and back.  If the original still
-     * matches the converted IP address, it's a valid address.  This
-     * function does not allow for IP addresses to be formatted as long
-     * integers.
+     * Validate the given IP adress.
      *
      * @param  string $ip IP address in the format x.x.x.x
      * @return bool       true if syntax is valid, otherwise false
@@ -56,14 +56,28 @@ class IpHandle
         }
     }
 
-    public static function parseRange($ip_range)
+    /**
+     * parseRange 
+     * 
+     * @param mixed $ip_range 
+     * @access public
+     * @return void
+     */
+    public function parseRange($ip_range)
     {
         $range_factory = new Bankiru\IPTools\RangeFactory();
         $range = $range_factory->parse($ip_range);
         return $range;
     }
 
-    public static function rangeIterator($range)
+    /**
+     * rangeIterator 
+     * 
+     * @param mixed $range 
+     * @access public
+     * @return void
+     */
+    public function rangeIterator($range)
     {
         $range_iter = new Bankiru\IPTools\RangeIterator($range);
         foreach ($range_iter as $key => $value) {
@@ -71,7 +85,13 @@ class IpHandle
         }
     }
 
-    public static function getIpRange()
+    /**
+     * getIpRange 
+     * 
+     * @access public
+     * @return void
+     */
+    public function getIpRange()
     {
         $ip_range = null;
         Iface::ifaceGetIpRange();
@@ -91,13 +111,14 @@ class IpHandle
         return $ip_range;
     } 
 }
-
+/*
 $handle = new IpHandle();
 $ip = $handle->getIpRange();
 var_dump($ip);
 $range = $handle->parseRange($ip);
 var_dump($range);
 $handle->rangeIterator($range);
+*/
 //$str_range = $handle->stringify($range);
 //var_dump($str_range);
 
