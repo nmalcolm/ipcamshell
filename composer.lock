@@ -1,0 +1,265 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "f91877fd50a4b03e2a388abc8c7ec8e5",
+    "packages": [
+        {
+            "name": "bankiru/ip-tools",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bankiru/ip-tools.git",
+                "reference": "40a0d461225634de845857016ede805b0618a168"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bankiru/ip-tools/zipball/40a0d461225634de845857016ede805b0618a168",
+                "reference": "40a0d461225634de845857016ede805b0618a168",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "0.4.*",
+                "phpunit/phpunit": "4.1.*",
+                "satooshi/php-coveralls": "0.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Bankiru\\IPTools\\": [
+                        "src",
+                        "tests"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Boris Gorbylev",
+                    "email": "ekho@ekho.name"
+                }
+            ],
+            "description": "ip range, cidr, netmask functions",
+            "keywords": [
+                "IP",
+                "cidr",
+                "ip range",
+                "netmask"
+            ],
+            "time": "2014-10-31 08:36:34"
+        },
+        {
+            "name": "leth/ip-address",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/leth/PHP-IPAddress.git",
+                "reference": "c62aab4c1a3a4d32c154b42965e62b23aa46b05b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/leth/PHP-IPAddress/zipball/c62aab4c1a3a4d32c154b42965e62b23aa46b05b",
+                "reference": "c62aab4c1a3a4d32c154b42965e62b23aa46b05b",
+                "shasum": ""
+            },
+            "require": {
+                "pear/math_biginteger": "1.0.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Leth\\IPAddress": "classes/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0"
+            ],
+            "description": "IPv4 and IPv6 address and subnet classes with awesome utility functions.",
+            "time": "2017-02-23 22:36:10"
+        },
+        {
+            "name": "pear/math_biginteger",
+            "version": "v1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/Math_BigInteger.git",
+                "reference": "33d4357543037a458fad3e8c837a01b93104e592"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/Math_BigInteger/zipball/33d4357543037a458fad3e8c837a01b93104e592",
+                "reference": "33d4357543037a458fad3e8c837a01b93104e592",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=4.2.0"
+            },
+            "suggest": {
+                "ext-bcmath": "Allows using the BCMath extension internally for computation. Faster than native implementation.",
+                "ext-gmp": "Allows using the GNU Multiple Precision extension internally for computation. If you are doing a lot of computation this is the recommended extension."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Math_": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jim Wigginton",
+                    "email": "terrafrost@php.net"
+                }
+            ],
+            "description": "Pure-PHP arbitrary precission integer arithmetic library. If GMP or BCMath are available they are used.",
+            "homepage": "https://github.com/pear/Math_BigInteger",
+            "keywords": [
+                "arbitrary",
+                "bcmath",
+                "gmp",
+                "integer",
+                "precision"
+            ],
+            "time": "2016-04-12T05:46:52+00:00"
+        },
+        {
+            "name": "pear/pear_exception",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear/PEAR_Exception.git",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear/PEAR_Exception/zipball/8c18719fdae000b690e3912be401c76e406dd13b",
+                "reference": "8c18719fdae000b690e3912be401c76e406dd13b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=4.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "*"
+            },
+            "type": "class",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "PEAR": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "include-path": [
+                "."
+            ],
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Helgi Thormar",
+                    "email": "dufuz@php.net"
+                },
+                {
+                    "name": "Greg Beaver",
+                    "email": "cellog@php.net"
+                }
+            ],
+            "description": "The PEAR Exception base class.",
+            "homepage": "https://github.com/pear/PEAR_Exception",
+            "keywords": [
+                "exception"
+            ],
+            "time": "2015-02-10 20:07:52"
+        },
+        {
+            "name": "pear2/console_commandline",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pear2/Console_CommandLine.git",
+                "reference": "002ef40e31edd0599bd157eea7661067caf9b45c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pear2/Console_CommandLine/zipball/002ef40e31edd0599bd157eea7661067caf9b45c",
+                "reference": "002ef40e31edd0599bd157eea7661067caf9b45c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "suggest": {
+                "ext-dom": "Required when parsing definitions from an XML file"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "PEAR2\\Console\\CommandLine": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vasil Rangelov",
+                    "email": "boen.robot@gmail.com",
+                    "role": "helper"
+                },
+                {
+                    "name": "David JEAN LOUIS",
+                    "email": "izi@php.net",
+                    "role": "lead"
+                },
+                {
+                    "name": "Brett Bieber",
+                    "email": "saltybeagle@php.net",
+                    "role": "helper"
+                }
+            ],
+            "description": "Full featured package for managing command-line applications.",
+            "homepage": "http://pear2.php.net/PEAR2_Console_CommandLine",
+            "keywords": [
+                "arguments",
+                "cli",
+                "commandline",
+                "console",
+                "parser",
+                "pear2"
+            ],
+            "time": "2017-05-22 13:01:54"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "dev",
+    "stability-flags": {
+        "pear2/console_commandline": 20,
+        "leth/ip-address": 20,
+        "bankiru/ip-tools": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

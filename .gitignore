@@ -1,0 +1,5 @@
+git_
+*.pdf
+/vendor/
+/src/vulns.php
+/src/template.php

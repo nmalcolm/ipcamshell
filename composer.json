@@ -1,0 +1,17 @@
+{
+    "name": "himei/ipcs_framework",
+    "description": "pentest framework for find and exploit IP-cams vulnerability",
+    "type": "project",
+    "require": {
+        "pear2/console_commandline": "dev-master",
+        "leth/ip-address": "dev-master",
+        "bankiru/ip-tools": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "hIMEI",
+            "email": "himei@tuta.io"
+        }
+    ],
+    "minimum-stability": "dev"
+}
